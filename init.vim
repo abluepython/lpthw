@@ -13,9 +13,14 @@ endif
 
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'vim-airline/vim-airline'
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
+" Enable emmet just for html/css
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 let g:deoplete#enable_at_startup = 1
 
@@ -45,3 +50,6 @@ set showmatch
 
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
+
+" NERDTree 
+map <C-n> :NERDTreeToggle<CR>
